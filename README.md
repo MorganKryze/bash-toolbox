@@ -1,10 +1,8 @@
-![screenshot](./docs/assets/img/screenshot.png)
+![screenshot](./docs/assets/img/presentation.jpg)
 
 ## Overview
 
-> Add a short description of the project here.
-
-Add important information about the project here.
+> UI tools for processes / functions feedbacks.
 
 ## Getting Started
 
@@ -15,76 +13,60 @@ Add important information about the project here.
     - [Prerequisites](#prerequisites)
     - [Install](#install)
     - [Usage](#usage)
-    - [Build \& Run](#build--run)
   - [Troubleshooting](#troubleshooting)
   - [Supported platforms](#supported-platforms)
-  - [Supported languages](#supported-languages)
-  - [Future improvements](#future-improvements)
   - [Contributing](#contributing)
   - [License](#license)
 
 ### Documentation
 
-Provide where to find to the documentation of the project. (ex: [Structure of the project](./docs/STRUCTURE.md))
+The repository defines colors variables from the bash values.
 
-It may include a link to an important [reference](https://example.com).
+The functions themselves can be used following this example:
+
+```bash
+func $1
+```
+
+_Where "func" is the function used, and "$1" the append text._
 
 ### Setting up
 
 #### Prerequisites
 
-- Define tools and libraries that are required to run the project with the version number.
-- If available, provide a link to the installation guide.
-- You may also add concepts or knowledge that are required to understand the project.
+- bash environment (zsh, fish, or equivalent should work too.)
+- git
 
 #### Install
 
-Details here explicit instructions to install the project.
-
-Here are the info blocks available for github markdown:
-
-> [!NOTE]
-> Do not hesitate to add a note if necessary.
-
 > [!TIP]
-> Do not hesitate to add a tip if necessary.
+> This repository may not be used as a standalone project, but rather as a dependency for a project in need to give feedback about what's happening during execution.
 
-> [!WARNING]
-> Do not hesitate to add a warning if necessary.
+You will only need to clone the repository:
 
-> [!IMPORTANT]
-> Do not hesitate to add an important note if necessary.
-
-> [!CAUTION]
-> Do not hesitate to add a caution if necessary.
+```bash
+git clone https://github.com/MorganKryze/bash-toolbox.git
+```
 
 #### Usage
 
-Detail here the instructions to use the project.
+Source the files to access their functions. Like this:
 
-#### Build & Run
+```bash
+source ./bash-toolbox/src/prefix.sh ; info "tools are installed"
+```
 
-Detail here the instructions to build and run the project.
+To access it globally, you will need to add the source instruction from your .bashrc (or equivalent) referencing the files with an absolute path.
 
 ### Troubleshooting
 
-Detail here the troubleshooting of the project.
+If you cannot access the functions, always check the path to the executable and your location with `pwd` in your terminal.
 
 ### Supported platforms
 
-- Precise here the platforms that are supported by the project.
-- If available, provide a link to the installation guide.
-- If in testing, do not hesitate to mention it.
-
-### Supported languages
-
-- Precise here the languages that are supported by the project.
-- If necessary, precise if some languages needs to be checked.
-
-### Future improvements
-
-- Precise here the future improvements that are planned for the project.
-- ~~Imporvement done can be styled like this.~~
+- MacOS
+- Linux
+- Windows (WSL or VM)
 
 ### Contributing
 
