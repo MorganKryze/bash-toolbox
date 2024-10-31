@@ -72,7 +72,7 @@ function description() {
 function acknoledge() {
   action "$1"
   action "Press any key to continue..."
-  read -n 1
+  read -k 1 -s
 }
 
 # =============================================================================
