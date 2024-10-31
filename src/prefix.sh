@@ -28,13 +28,6 @@ function green() {
   txt "${GREEN}$1${RESET}"
 }
 
-# Displays an error message when a command fails.
-# $1: The error message to display.
-function error() {
-  txt "[${RED}  ERROR  ${RESET}] ${RED}$1${RESET}"
-  exit 1
-}
-
 # Displays an information message.
 # $1: The message to display.
 function info() {
@@ -57,6 +50,13 @@ function warning() {
 # $1: The message to display.
 function success() {
   txt "[${GREEN} SUCCESS ${RESET}] ${GREEN}$1${RESET}"
+}
+
+# Displays an error message when a command fails.
+# $1: The error message to display.
+function error() {
+  txt "[${RED}  ERROR  ${RESET}] ${RED}$1${RESET}"
+  exit 1
 }
 
 # Displays a description of a function.
