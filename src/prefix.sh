@@ -63,7 +63,7 @@ function error() {
 # $1: The function name.
 # $2: The description of the function.
 function description() {
-  info "${GREEN}The ${BLUE}$1${GREEN} command $2 ${RESET}\n"
+  info "${GREEN}The ${BLUE}$1${GREEN} command $2 ${RESET}"
   sleep 2
 }
 
