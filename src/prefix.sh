@@ -31,7 +31,7 @@ function green() {
 # Displays an information message.
 # $1: The message to display.
 function info() {
-  txt "[${BLUE}   INFO  ${RESET}] ${BLUE}$1${RESET}"
+  txt "[${BLUE}  INFO   ${RESET}] ${BLUE}$1${RESET}"
 }
 
 # Displays an action message.
