@@ -31,26 +31,32 @@ function green() {
 # Displays an error message when a command fails.
 # $1: The error message to display.
 function error() {
-  txt "[${RED}   ERROR   ${RESET}] $1${RESET}"
-  return 1
+  txt "[${RED}   ERROR   ${RESET}] ${RED}$1${RESET}"
+  exit 1
 }
 
 # Displays an information message.
 # $1: The message to display.
 function info() {
-  echo "[${BLUE}    INFO   ${RESET}] $1${RESET}"
+  txt "[${BLUE}    INFO   ${RESET}] ${BLUE}$1${RESET}"
+}
+
+# Displays an action message.
+# $1: The message to display.
+function action() {
+  txt "[${BLUE}  ACTION   ${RESET}] ${BLUE}$1${RESET}"
 }
 
 # Displays a warning message.
 # $1: The message to display.
 function warning() {
-  echo "[${ORANGE}  WARNING  ${RESET}] $1${RESET}"
+  txt "[${ORANGE}  WARNING  ${RESET}] ${ORANGE}$1${RESET}"
 }
 
 # Displays a success message.
 # $1: The message to display.
 function success() {
-  echo "[${GREEN}  SUCCESS  ${RESET}] $1${RESET}"
+  txt "[${GREEN}  SUCCESS  ${RESET}] ${GREEN}$1${RESET}"
 }
 
 # Displays a description of a function.
@@ -59,6 +65,14 @@ function success() {
 function description() {
   info "${GREEN}The ${BLUE}$1${GREEN} command $2 ${RESET}\n"
   sleep 2
+}
+
+# Displays message to wait for user acknoledgement.
+# $1: The message to display.
+function acknoledge() {
+  action "$1"
+  action "Press any key to continue..."
+  read -n 1
 }
 
 # =============================================================================
