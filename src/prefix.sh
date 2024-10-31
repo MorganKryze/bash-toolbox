@@ -31,32 +31,32 @@ function green() {
 # Displays an error message when a command fails.
 # $1: The error message to display.
 function error() {
-  txt "[${RED}   ERROR   ${RESET}] ${RED}$1${RESET}"
+  txt "[${RED}  ERROR  ${RESET}] ${RED}$1${RESET}"
   exit 1
 }
 
 # Displays an information message.
 # $1: The message to display.
 function info() {
-  txt "[${BLUE}    INFO   ${RESET}] ${BLUE}$1${RESET}"
+  txt "[${BLUE}   INFO  ${RESET}] ${BLUE}$1${RESET}"
 }
 
 # Displays an action message.
 # $1: The message to display.
 function action() {
-  txt "[${BLUE}  ACTION   ${RESET}] ${BLUE}$1${RESET}"
+  txt "[${BLUE}   ACTION  ${RESET}] ${BLUE}$1${RESET}"
 }
 
 # Displays a warning message.
 # $1: The message to display.
 function warning() {
-  txt "[${ORANGE}  WARNING  ${RESET}] ${ORANGE}$1${RESET}"
+  txt "[${ORANGE} WARNING ${RESET}] ${ORANGE}$1${RESET}"
 }
 
 # Displays a success message.
 # $1: The message to display.
 function success() {
-  txt "[${GREEN}  SUCCESS  ${RESET}] ${GREEN}$1${RESET}"
+  txt "[${GREEN} SUCCESS ${RESET}] ${GREEN}$1${RESET}"
 }
 
 # Displays a description of a function.
