@@ -37,7 +37,7 @@ function info() {
 # Displays an action message.
 # $1: The message to display.
 function action() {
-  txt "[${BLUE}   ACTION  ${RESET}] ${BLUE}$1${RESET}"
+  txt "[${BLUE} ACTION  ${RESET}] ${BLUE}$1${RESET}"
 }
 
 # Displays a warning message.
@@ -70,7 +70,7 @@ function description() {
 # Displays message to wait for user acknoledgement.
 # $1: The message to display.
 function acknoledge() {
-  action "$1"
+  action $1
   action "Press any key to continue..."
   read -k 1 -s
 }
