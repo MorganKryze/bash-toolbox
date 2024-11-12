@@ -56,7 +56,7 @@ function success() {
 # $1: The error message to display.
 function error() {
   txt "[${RED}  ERROR  ${RESET}] ${RED}$1${RESET}"
-  exit 1
+  return 1
 }
 
 # Displays a description of a function.
