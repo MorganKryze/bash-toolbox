@@ -67,9 +67,9 @@ function description() {
   sleep 2
 }
 
-# Displays message to wait for user acknoledgement.
+# Displays message to wait for user acknowledgement.
 # $1: The message to display.
-function acknoledge() {
+function acknowledge() {
   action $1
   action "Press any key to continue..."
   read -k 1 -s
