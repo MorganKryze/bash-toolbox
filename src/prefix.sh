@@ -4,6 +4,7 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 RED='\033[0;31m'
 ORANGE='\033[0;33m'
+YELLOW='\033[1;33m'
 RESET='\033[0m'
 LINK='\033[0;36m'
 UNDERLINE='\033[4m'
@@ -32,6 +33,12 @@ function green() {
 # $1: The message to display.
 function info() {
   txt "[${BLUE}  INFO   ${RESET}] ${BLUE}$1${RESET}"
+}
+
+# Display a hint message.
+# $1: The message to display.
+function hint() {
+  txt "[${YELLOW}  HINT   ${RESET}] ${YELLOW}$1${RESET}"
 }
 
 # Displays an action message.
