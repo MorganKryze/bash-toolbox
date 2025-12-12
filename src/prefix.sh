@@ -11,6 +11,11 @@ UNDERLINE='\033[4m'
 
 # ================================== FUNCTIONS =========================================
 
+# Returns the current timestamp in "YYYY-MM-DD HH:MM:SS" format.
+function get_timestamp() {
+  date +"%Y-%m-%d %T"
+}
+
 # Displays a raw message.
 # $1: The message to display.
 function txt() {
@@ -32,37 +37,37 @@ function green() {
 # Displays an information message.
 # $1: The message to display.
 function info() {
-  txt "[${BLUE}  INFO   ${RESET}] ${BLUE}$1${RESET}"
+  txt "[${BLUE} $(get_timestamp) ${RESET}] [${BLUE}  INFO   ${RESET}] ${BLUE}$1${RESET}"
 }
 
 # Display a hint message.
 # $1: The message to display.
 function hint() {
-  txt "[${YELLOW}  HINT   ${RESET}] ${YELLOW}$1${RESET}"
+  txt "[${YELLOW} $(get_timestamp) ${RESET}] [${YELLOW}  HINT   ${RESET}] ${YELLOW}$1${RESET}"
 }
 
 # Displays an action message.
 # $1: The message to display.
 function action() {
-  txt "[${BLUE} ACTION  ${RESET}] ${BLUE}$1${RESET}"
+  txt "[${BLUE} $(get_timestamp) ${RESET}] [${BLUE} ACTION  ${RESET}] ${BLUE}$1${RESET}"
 }
 
 # Displays a warning message.
 # $1: The message to display.
 function warning() {
-  txt "[${ORANGE} WARNING ${RESET}] ${ORANGE}$1${RESET}"
+  txt "[${ORANGE} $(get_timestamp) ${RESET}] [${ORANGE} WARNING ${RESET}] ${ORANGE}$1${RESET}"
 }
 
 # Displays a success message.
 # $1: The message to display.
 function success() {
-  txt "[${GREEN} SUCCESS ${RESET}] ${GREEN}$1${RESET}"
+  txt "[${GREEN} $(get_timestamp) ${RESET}] [${GREEN} SUCCESS ${RESET}] ${GREEN}$1${RESET}"
 }
 
 # Displays an error message when a command fails.
 # $1: The error message to display.
 function error() {
-  txt "[${RED}  ERROR  ${RESET}] ${RED}$1${RESET}"
+  txt "[${RED} $(get_timestamp) ${RESET}] [${RED}  ERROR  ${RESET}] ${RED}$1${RESET}"
   return 1
 }
 
