@@ -5,9 +5,13 @@
 # Demonstrates error handling and user prompts with bash-toolbox.
 # ==============================================================================
 
-# Source the library
+# Source the library (local first, remote fallback)
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && cd .. && pwd)"
-source "${SCRIPT_DIR}/src/prefix.sh"
+if [[ -f "${SCRIPT_DIR}/src/prefix.sh" ]]; then
+  source "${SCRIPT_DIR}/src/prefix.sh"
+else
+  source <(curl -s https://raw.githubusercontent.com/MorganKryze/bash-toolbox/main/src/prefix.sh)
+fi
 
 # Configuration
 BACKUP_DIR="/tmp/backup-demo"
