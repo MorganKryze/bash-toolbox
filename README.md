@@ -1,77 +1,134 @@
-![screenshot](./docs/assets/img/presentation.jpg)
+![Demo](./docs/assets/img/presentation.png)
 
-## Overview
+# Bash Toolbox
 
-> UI tools for processes / functions feedbacks.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](./docs/CHANGELOG.md)
 
-## Getting Started
+A lightweight bash library for colored logging, progress indicators, and interactive prompts.
 
-- [Overview](#overview)
-- [Getting Started](#getting-started)
-  - [Documentation](#documentation)
-  - [Setting up](#setting-up)
-    - [Prerequisites](#prerequisites)
-    - [Install](#install)
-    - [Usage](#usage)
-  - [Troubleshooting](#troubleshooting)
-  - [Supported platforms](#supported-platforms)
-  - [Contributing](#contributing)
-  - [License](#license)
+## Features
 
-### Documentation
+- **Colored Logging** - Multiple log levels with timestamps and colors
+- **Progress Indicators** - Spinner and progress bar
+- **Interactive Prompts** - User input and confirmations
+- **Configurable** - Environment variables for timestamps, colors, and log levels
+- **Pure Bash** - No external dependencies
 
-The repository defines colors variables from the bash values.
+## Quick Start
 
-The functions themselves can be used following this example:
+No installation needed! Source directly from GitHub:
 
 ```bash
-func $1
+source <(curl -s https://raw.githubusercontent.com/MorganKryze/bash-toolbox/main/src/prefix.sh)
+
+# Start using immediately
+info "Starting application..."
+success "Done!"
+
+# Interactive prompt
+name=$(input "Your name?" "User")
+if prompt "Continue?" "y"; then
+  success "Hello, $name!"
+fi
 ```
 
-_Where "func" is the function used, and "$1" the append text._
+## Installation
 
-### Setting up
+### Direct Usage (Recommended)
 
-#### Prerequisites
+Source directly in your scripts:
 
-- bash environment (zsh, fish, or equivalent should work too.)
-- git
+```bash
+#!/usr/bin/env bash
+source <(curl -s https://raw.githubusercontent.com/MorganKryze/bash-toolbox/main/src/prefix.sh)
 
-#### Install
+info "No installation required!"
+```
 
-> [!TIP]
-> This repository may not be used as a standalone project, but rather as a dependency for a project in need to give feedback about what's happening during execution.
+### Local Installation
 
-You will only need to clone the repository:
+For offline use or development:
 
 ```bash
 git clone https://github.com/MorganKryze/bash-toolbox.git
+cd bash-toolbox
+./demo.sh  # Try it out
+
+# Source locally
+source ./src/prefix.sh
 ```
 
-#### Usage
+## Usage
 
-Source the files to access their functions. Like this:
+### Logging
 
 ```bash
-source ./bash-toolbox/src/prefix.sh ; info "tools are installed"
+debug "Debug info"           # Gray, level 0
+info "Information"           # Blue, level 1
+warning "Warning message"    # Orange, level 2
+error "Error occurred"       # Red, level 3
+fatal "Fatal error" 1        # Red, exits with code
 ```
 
-To access it globally, you will need to add the source instruction from your .bashrc (or equivalent) referencing the files with an absolute path.
+### Progress
 
-### Troubleshooting
+```bash
+# Spinner
+spinner "sleep 3" "Processing..."
 
-If you cannot access the functions, always check the path to the executable and your location with `pwd` in your terminal.
+# Progress bar
+for i in {1..100}; do
+  progress_bar $i 100
+  sleep 0.05
+done
+```
 
-### Supported platforms
+### Prompts
 
-- MacOS
-- Linux
-- Windows (WSL or VM)
+```bash
+# Yes/no confirmation
+if prompt "Delete files?" "n"; then
+  action "Deleting..."
+fi
 
-### Contributing
+# Text input
+name=$(input "Enter name" "default")
 
-If you want to contribute to the project, you can follow the steps described in the [CONTRIBUTING](./.github/CONTRIBUTING) file.
+# Wait for key
+acknowledge "Press any key to continue"
+```
 
-### License
+### Utilities
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
+```bash
+separator           # Full-width line
+header "SECTION"    # Centered header
+blue "Colored text" # Direct color output
+```
+
+## Configuration
+
+Set environment variables before sourcing:
+
+```bash
+ENABLE_TIMESTAMPS=false  # Disable timestamps
+ENABLE_COLORS=false      # Disable colors
+LOG_LEVEL=2              # Only warnings and above (0-4)
+LOG_FILE="/tmp/app.log"  # Enable file logging
+
+source ./src/prefix.sh
+```
+
+## Documentation
+
+See [QUICKREF.md](./docs/QUICKREF.md) for complete function reference and [examples/](examples/) for more usage patterns.
+
+## Requirements
+
+- Bash 4.0+ or zsh 5.0+
+- Terminal with color support (optional)
+
+## License
+
+MIT License - see [LICENSE](LICENSE) for details.

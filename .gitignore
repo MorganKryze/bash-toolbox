@@ -1,0 +1,37 @@
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# Test outputs
+test-results/
+coverage/
+
+# Backup files
+*.bak
+*.backup
+
+# Local configuration
+.env
+.env.local
+config.local.sh
