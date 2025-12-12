@@ -65,12 +65,12 @@ All demo and example scripts work anywhere, even without cloning:
 
 ```bash
 # Run the full demo
-bash <(curl -s https://raw.githubusercontent.com/MorganKryze/bash-toolbox/main/demo.sh)
+bash -c "$(curl -s https://raw.githubusercontent.com/MorganKryze/bash-toolbox/main/demo.sh)"
 
 # Run any example
-bash <(curl -s https://raw.githubusercontent.com/MorganKryze/bash-toolbox/main/examples/simple.sh)
-bash <(curl -s https://raw.githubusercontent.com/MorganKryze/bash-toolbox/main/examples/backup.sh)
-bash <(curl -s https://raw.githubusercontent.com/MorganKryze/bash-toolbox/main/examples/installer.sh)
+bash -c "$(curl -s https://raw.githubusercontent.com/MorganKryze/bash-toolbox/main/examples/simple.sh)"
+bash -c "$(curl -s https://raw.githubusercontent.com/MorganKryze/bash-toolbox/main/examples/backup.sh)"
+bash -c "$(curl -s https://raw.githubusercontent.com/MorganKryze/bash-toolbox/main/examples/installer.sh)"
 ```
 
 The scripts automatically load the library from GitHub if not found locally.
